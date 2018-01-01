@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="UTF-8">
+       <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+       <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/babel">
+      /* JSX with JavaScript Expression */
+          var str = "World!"
+          var element = <h1> Hello {str}</h1>
+
+          var item = {
+            name: "Cheese",
+            price: 5
+          }
+          var element
+          var t = <p>{item.name} : ${item.price} </p>
+
+      // ---------------------------------------- //
+      /* Using Function and div */
+          var length = 20
+          var width = 10
+          function calculateArea(x,y){
+            return x*y
+          }
+          var element = <div>The Area is: {calculateArea(length,width)}</div>
+
+      // ----------------------------------------- //
+          // Supply attribute values using a string literal by quotes
+          // HTML's class -> JSX className
+          var element = <button className ="deleteButton"> Delete </button>
+
+          // Supply attribute values by embedding a JS expression using curly braces
+          var element = <img src ={product.imageURL}></img>
+
+          //Use JSX with Empty Tags
+          var element = <input className ="nameInput"/>
+
+          //Use JSX with a Style Object
+
+          var styleObject = {
+            backgroundColor: 'red',
+            color: 'blue',
+            fontSize: 25,
+            width: 100
+          }
+          var element = <input style = {styleObject}/>
+
+          //first curly braces is for JSX expression and second curly braces is for style Object
+          var element = <input style = {{width:200, height:100}}/>
+
+          //JSX with Nested Elements
+          var elements = (
+            <div>
+                <div>Hello World</div>
+                <div>Hello World</div>
+            </div>
+          )
+
+          //Using JSX Objects
+          var product = {name:"apple",stock:0}
+
+          if(product.stock < 0){
+              var element = <h1>The product named {product.name} is not in stock</h1>
+          }
+          else{
+              var element = <h1>The product named {product.name} and has {product.stock} units in stock</h1>
+          }
+
+
+          //ReactDOM takes 2 parameters: element, target
+          ReactDOM.render(
+              element,
+              document.getElementById("root")
+          )
+      </script>
+
+  </body>
+</html>

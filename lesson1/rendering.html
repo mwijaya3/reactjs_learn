@@ -10,8 +10,10 @@
   <body>
       <div id="root"></div>
       <script type="text/babel">
+          var element = <h1>Hello World</h1>
+          //ReactDOM takes 2 parameters: element, target
           ReactDOM.render(
-              <div>Hello World</div>,
+              element,
               document.getElementById("root")
           )
       </script>
