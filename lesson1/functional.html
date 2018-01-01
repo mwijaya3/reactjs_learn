@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="UTF-8">
+       <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+       <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+
+  </head>
+  <body>
+      <div id="root"></div>
+      <script type="text/babel">
+
+          //Create function HelloWorld that output h1 Hello World
+          function HelloWorld() {
+            return <h1> Hello World </h1>
+          }
+
+          //calling HelloWorld function into React element -> <HelloWorld/>
+          ReactDOM.render(
+              <HelloWorld/>,
+              document.getElementById("root")
+          )
+
+          //Supply parameter to customize function
+          function HelloWorld(props) {
+            return <h1> Hello {props.message} </h1>
+          }
+
+          //Supply message property to call on HelloWorld function
+          ReactDOM.render(
+              <HelloWorld message = "My Message"/>,
+              document.getElementById("root")
+          )
+
+
+
+      </script>
+
+  </body>
+</html>
